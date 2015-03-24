@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B259EDAF1AC16D77000A6147 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B259EDAE1AC16D77000A6147 /* main.m */; };
+		B259EDB21AC16D77000A6147 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B259EDB11AC16D77000A6147 /* AppDelegate.m */; };
+		B259EDB51AC16D77000A6147 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B259EDB41AC16D77000A6147 /* ViewController.m */; };
+		B259EDB81AC16D77000A6147 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B259EDB61AC16D77000A6147 /* Main.storyboard */; };
+		B259EDBA1AC16D77000A6147 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B259EDB91AC16D77000A6147 /* Images.xcassets */; };
+		B259EDBD1AC16D77000A6147 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B259EDBB1AC16D77000A6147 /* LaunchScreen.xib */; };
+		B259EDC91AC16D77000A6147 /* SodierEmojiKeyBoardPlusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B259EDC81AC16D77000A6147 /* SodierEmojiKeyBoardPlusTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B259EDC31AC16D77000A6147 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B259EDA11AC16D77000A6147 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B259EDA81AC16D77000A6147;
+			remoteInfo = SodierEmojiKeyBoardPlus;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B259EDA91AC16D77000A6147 /* SodierEmojiKeyBoardPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SodierEmojiKeyBoardPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B259EDAD1AC16D77000A6147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B259EDAE1AC16D77000A6147 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B259EDB01AC16D77000A6147 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B259EDB11AC16D77000A6147 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B259EDB31AC16D77000A6147 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B259EDB41AC16D77000A6147 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B259EDB71AC16D77000A6147 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B259EDB91AC16D77000A6147 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B259EDBC1AC16D77000A6147 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B259EDC21AC16D77000A6147 /* SodierEmojiKeyBoardPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SodierEmojiKeyBoardPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B259EDC71AC16D77000A6147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B259EDC81AC16D77000A6147 /* SodierEmojiKeyBoardPlusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SodierEmojiKeyBoardPlusTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B259EDA61AC16D77000A6147 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B259EDBF1AC16D77000A6147 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B259EDA01AC16D77000A6147 = {
+			isa = PBXGroup;
+			children = (
+				B259EDAB1AC16D77000A6147 /* SodierEmojiKeyBoardPlus */,
+				B259EDC51AC16D77000A6147 /* SodierEmojiKeyBoardPlusTests */,
+				B259EDAA1AC16D77000A6147 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B259EDAA1AC16D77000A6147 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B259EDA91AC16D77000A6147 /* SodierEmojiKeyBoardPlus.app */,
+				B259EDC21AC16D77000A6147 /* SodierEmojiKeyBoardPlusTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B259EDAB1AC16D77000A6147 /* SodierEmojiKeyBoardPlus */ = {
+			isa = PBXGroup;
+			children = (
+				B259EDB01AC16D77000A6147 /* AppDelegate.h */,
+				B259EDB11AC16D77000A6147 /* AppDelegate.m */,
+				B259EDB31AC16D77000A6147 /* ViewController.h */,
+				B259EDB41AC16D77000A6147 /* ViewController.m */,
+				B259EDB61AC16D77000A6147 /* Main.storyboard */,
+				B259EDB91AC16D77000A6147 /* Images.xcassets */,
+				B259EDBB1AC16D77000A6147 /* LaunchScreen.xib */,
+				B259EDAC1AC16D77000A6147 /* Supporting Files */,
+			);
+			path = SodierEmojiKeyBoardPlus;
+			sourceTree = "<group>";
+		};
+		B259EDAC1AC16D77000A6147 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B259EDAD1AC16D77000A6147 /* Info.plist */,
+				B259EDAE1AC16D77000A6147 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B259EDC51AC16D77000A6147 /* SodierEmojiKeyBoardPlusTests */ = {
+			isa = PBXGroup;
+			children = (
+				B259EDC81AC16D77000A6147 /* SodierEmojiKeyBoardPlusTests.m */,
+				B259EDC61AC16D77000A6147 /* Supporting Files */,
+			);
+			path = SodierEmojiKeyBoardPlusTests;
+			sourceTree = "<group>";
+		};
+		B259EDC61AC16D77000A6147 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B259EDC71AC16D77000A6147 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B259EDA81AC16D77000A6147 /* SodierEmojiKeyBoardPlus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B259EDCC1AC16D77000A6147 /* Build configuration list for PBXNativeTarget "SodierEmojiKeyBoardPlus" */;
+			buildPhases = (
+				B259EDA51AC16D77000A6147 /* Sources */,
+				B259EDA61AC16D77000A6147 /* Frameworks */,
+				B259EDA71AC16D77000A6147 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SodierEmojiKeyBoardPlus;
+			productName = SodierEmojiKeyBoardPlus;
+			productReference = B259EDA91AC16D77000A6147 /* SodierEmojiKeyBoardPlus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B259EDC11AC16D77000A6147 /* SodierEmojiKeyBoardPlusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B259EDCF1AC16D77000A6147 /* Build configuration list for PBXNativeTarget "SodierEmojiKeyBoardPlusTests" */;
+			buildPhases = (
+				B259EDBE1AC16D77000A6147 /* Sources */,
+				B259EDBF1AC16D77000A6147 /* Frameworks */,
+				B259EDC01AC16D77000A6147 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B259EDC41AC16D77000A6147 /* PBXTargetDependency */,
+			);
+			name = SodierEmojiKeyBoardPlusTests;
+			productName = SodierEmojiKeyBoardPlusTests;
+			productReference = B259EDC21AC16D77000A6147 /* SodierEmojiKeyBoardPlusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B259EDA11AC16D77000A6147 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Soldier;
+				TargetAttributes = {
+					B259EDA81AC16D77000A6147 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					B259EDC11AC16D77000A6147 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = B259EDA81AC16D77000A6147;
+					};
+				};
+			};
+			buildConfigurationList = B259EDA41AC16D77000A6147 /* Build configuration list for PBXProject "SodierEmojiKeyBoardPlus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B259EDA01AC16D77000A6147;
+			productRefGroup = B259EDAA1AC16D77000A6147 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B259EDA81AC16D77000A6147 /* SodierEmojiKeyBoardPlus */,
+				B259EDC11AC16D77000A6147 /* SodierEmojiKeyBoardPlusTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B259EDA71AC16D77000A6147 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B259EDB81AC16D77000A6147 /* Main.storyboard in Resources */,
+				B259EDBD1AC16D77000A6147 /* LaunchScreen.xib in Resources */,
+				B259EDBA1AC16D77000A6147 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B259EDC01AC16D77000A6147 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B259EDA51AC16D77000A6147 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B259EDB51AC16D77000A6147 /* ViewController.m in Sources */,
+				B259EDB21AC16D77000A6147 /* AppDelegate.m in Sources */,
+				B259EDAF1AC16D77000A6147 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B259EDBE1AC16D77000A6147 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B259EDC91AC16D77000A6147 /* SodierEmojiKeyBoardPlusTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B259EDC41AC16D77000A6147 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B259EDA81AC16D77000A6147 /* SodierEmojiKeyBoardPlus */;
+			targetProxy = B259EDC31AC16D77000A6147 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B259EDB61AC16D77000A6147 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B259EDB71AC16D77000A6147 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B259EDBB1AC16D77000A6147 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B259EDBC1AC16D77000A6147 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B259EDCA1AC16D77000A6147 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B259EDCB1AC16D77000A6147 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B259EDCD1AC16D77000A6147 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SodierEmojiKeyBoardPlus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B259EDCE1AC16D77000A6147 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SodierEmojiKeyBoardPlus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B259EDD01AC16D77000A6147 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SodierEmojiKeyBoardPlusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SodierEmojiKeyBoardPlus.app/SodierEmojiKeyBoardPlus";
+			};
+			name = Debug;
+		};
+		B259EDD11AC16D77000A6147 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SodierEmojiKeyBoardPlusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SodierEmojiKeyBoardPlus.app/SodierEmojiKeyBoardPlus";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B259EDA41AC16D77000A6147 /* Build configuration list for PBXProject "SodierEmojiKeyBoardPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B259EDCA1AC16D77000A6147 /* Debug */,
+				B259EDCB1AC16D77000A6147 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B259EDCC1AC16D77000A6147 /* Build configuration list for PBXNativeTarget "SodierEmojiKeyBoardPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B259EDCD1AC16D77000A6147 /* Debug */,
+				B259EDCE1AC16D77000A6147 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B259EDCF1AC16D77000A6147 /* Build configuration list for PBXNativeTarget "SodierEmojiKeyBoardPlusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B259EDD01AC16D77000A6147 /* Debug */,
+				B259EDD11AC16D77000A6147 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B259EDA11AC16D77000A6147 /* Project object */;
+}
