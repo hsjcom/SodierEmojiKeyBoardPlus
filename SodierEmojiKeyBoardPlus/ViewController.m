@@ -104,7 +104,7 @@
     _textView = [[UITextView alloc] initWithFrame:CGRectMake(52, 10, _toolBar.frame.size.width - 52 - 60, _toolBar.frame.size.height - 20)];
     [_textView.layer setCornerRadius:6];
     [_textView.layer setMasksToBounds:YES];
-    _textView.font = [UIFont systemFontOfSize:10];
+    _textView.font = [UIFont systemFontOfSize:16];
     _textView.delegate = self;
     [_toolBar addSubview:_textView];
     
