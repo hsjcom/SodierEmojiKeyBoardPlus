@@ -1,10 +1,9 @@
 # SodierEmojiKeyBoardPlus
-EmojiKeyBoard
+##EmojiKeyBoard
+
+ *emoji键盘扩展， 自定义emoji plist
+ *emoji字符元 eg：`[微笑]`
 
 
-emoji键盘扩展， 自定义emoji plist
-emoji字符元 eg：[微笑]
 
-
-
-I am soldier!
+*I am soldier!*
