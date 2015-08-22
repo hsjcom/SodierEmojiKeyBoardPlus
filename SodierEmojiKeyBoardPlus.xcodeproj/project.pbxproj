@@ -196,6 +196,10 @@
 		B2AFCADD1AC91D0E00E21B86 /* emojiBoardBtn_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2AFCADC1AC91D0E00E21B86 /* emojiBoardBtn_hl@2x.png */; };
 		B2AFCAE41AC9254900E21B86 /* imageBoardBtn_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2AFCAE21AC9254900E21B86 /* imageBoardBtn_hl@2x.png */; };
 		B2AFCAE51AC9254900E21B86 /* imageBoardBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2AFCAE31AC9254900E21B86 /* imageBoardBtn@2x.png */; };
+		B2C4A9941B883ED500B6DD46 /* EMMarkupProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C4A98D1B883ED500B6DD46 /* EMMarkupProperty.m */; };
+		B2C4A9951B883ED500B6DD46 /* EMStringStylingConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C4A98F1B883ED500B6DD46 /* EMStringStylingConfiguration.m */; };
+		B2C4A9961B883ED500B6DD46 /* EMStylingClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C4A9911B883ED500B6DD46 /* EMStylingClass.m */; };
+		B2C4A9971B883ED500B6DD46 /* NSString+EMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C4A9931B883ED500B6DD46 /* NSString+EMAdditions.m */; };
 		B2E122561AC6BEEA00A56876 /* emoji_001.png in Resources */ = {isa = PBXBuildFile; fileRef = B2E122231AC6BEEA00A56876 /* emoji_001.png */; };
 		B2E122571AC6BEEA00A56876 /* emoji_002.png in Resources */ = {isa = PBXBuildFile; fileRef = B2E122241AC6BEEA00A56876 /* emoji_002.png */; };
 		B2E122581AC6BEEA00A56876 /* emoji_003.png in Resources */ = {isa = PBXBuildFile; fileRef = B2E122251AC6BEEA00A56876 /* emoji_003.png */; };
@@ -464,6 +468,14 @@
 		B2AFCADC1AC91D0E00E21B86 /* emojiBoardBtn_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emojiBoardBtn_hl@2x.png"; sourceTree = "<group>"; };
 		B2AFCAE21AC9254900E21B86 /* imageBoardBtn_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imageBoardBtn_hl@2x.png"; sourceTree = "<group>"; };
 		B2AFCAE31AC9254900E21B86 /* imageBoardBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imageBoardBtn@2x.png"; sourceTree = "<group>"; };
+		B2C4A98C1B883ED500B6DD46 /* EMMarkupProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMMarkupProperty.h; sourceTree = "<group>"; };
+		B2C4A98D1B883ED500B6DD46 /* EMMarkupProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMMarkupProperty.m; sourceTree = "<group>"; };
+		B2C4A98E1B883ED500B6DD46 /* EMStringStylingConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMStringStylingConfiguration.h; sourceTree = "<group>"; };
+		B2C4A98F1B883ED500B6DD46 /* EMStringStylingConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMStringStylingConfiguration.m; sourceTree = "<group>"; };
+		B2C4A9901B883ED500B6DD46 /* EMStylingClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMStylingClass.h; sourceTree = "<group>"; };
+		B2C4A9911B883ED500B6DD46 /* EMStylingClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMStylingClass.m; sourceTree = "<group>"; };
+		B2C4A9921B883ED500B6DD46 /* NSString+EMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EMAdditions.h"; sourceTree = "<group>"; };
+		B2C4A9931B883ED500B6DD46 /* NSString+EMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EMAdditions.m"; sourceTree = "<group>"; };
 		B2E122231AC6BEEA00A56876 /* emoji_001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_001.png; sourceTree = "<group>"; };
 		B2E122241AC6BEEA00A56876 /* emoji_002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_002.png; sourceTree = "<group>"; };
 		B2E122251AC6BEEA00A56876 /* emoji_003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_003.png; sourceTree = "<group>"; };
@@ -562,6 +574,7 @@
 		B259EDAB1AC16D77000A6147 /* SodierEmojiKeyBoardPlus */ = {
 			isa = PBXGroup;
 			children = (
+				B2C4A98B1B883ED500B6DD46 /* EMString */,
 				B259EFBE1AC5603E000A6147 /* TTTAttributedLabel */,
 				B259EDD21AC16EFC000A6147 /* Class */,
 				B259EDB01AC16D77000A6147 /* AppDelegate.h */,
@@ -821,6 +834,21 @@
 				B2E122961AC83C8E00A56876 /* HBEmojiLabel.m */,
 			);
 			path = TTTAttributedLabel;
+			sourceTree = "<group>";
+		};
+		B2C4A98B1B883ED500B6DD46 /* EMString */ = {
+			isa = PBXGroup;
+			children = (
+				B2C4A98C1B883ED500B6DD46 /* EMMarkupProperty.h */,
+				B2C4A98D1B883ED500B6DD46 /* EMMarkupProperty.m */,
+				B2C4A98E1B883ED500B6DD46 /* EMStringStylingConfiguration.h */,
+				B2C4A98F1B883ED500B6DD46 /* EMStringStylingConfiguration.m */,
+				B2C4A9901B883ED500B6DD46 /* EMStylingClass.h */,
+				B2C4A9911B883ED500B6DD46 /* EMStylingClass.m */,
+				B2C4A9921B883ED500B6DD46 /* NSString+EMAdditions.h */,
+				B2C4A9931B883ED500B6DD46 /* NSString+EMAdditions.m */,
+			);
+			path = EMString;
 			sourceTree = "<group>";
 		};
 		B2E122221AC6BEEA00A56876 /* emoji */ = {
@@ -1217,11 +1245,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B259EFC31AC5603E000A6147 /* MLEmojiLabel.m in Sources */,
+				B2C4A9941B883ED500B6DD46 /* EMMarkupProperty.m in Sources */,
 				B259EFBD1AC54437000A6147 /* EmojiButton.m in Sources */,
 				B259EDB51AC16D77000A6147 /* ViewController.m in Sources */,
+				B2C4A9951B883ED500B6DD46 /* EMStringStylingConfiguration.m in Sources */,
+				B2C4A9961B883ED500B6DD46 /* EMStylingClass.m in Sources */,
 				B259EFC41AC5603E000A6147 /* TTTAttributedLabel.m in Sources */,
 				B259EDD91AC16F14000A6147 /* EmojiBoard.m in Sources */,
 				B259EDB21AC16D77000A6147 /* AppDelegate.m in Sources */,
+				B2C4A9971B883ED500B6DD46 /* NSString+EMAdditions.m in Sources */,
 				B259EDAF1AC16D77000A6147 /* main.m in Sources */,
 				B2E122971AC83C8E00A56876 /* HBEmojiLabel.m in Sources */,
 			);

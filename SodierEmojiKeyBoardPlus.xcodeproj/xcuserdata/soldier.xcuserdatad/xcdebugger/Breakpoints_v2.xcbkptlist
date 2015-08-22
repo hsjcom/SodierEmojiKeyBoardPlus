@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SodierEmojiKeyBoardPlus/ViewController.m"
-            timestampString = "449575487.584938"
+            timestampString = "461914133.642988"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
-            landmarkName = "-textViewDidChange:"
-            landmarkType = "5">
+            startingLineNumber = "253"
+            endingLineNumber = "253"
+            landmarkName = "@implementation ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
