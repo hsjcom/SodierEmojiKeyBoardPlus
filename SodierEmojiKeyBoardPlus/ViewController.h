@@ -10,7 +10,7 @@
 #import "EmojiBoard.h"
 #import "HBEmojiLabel.h"
 
-@interface ViewController : UIViewController<EmojiBoardDelegate, UITextViewDelegate>{
+@interface ViewController : UIViewController<EmojiBoardDelegate, UITextViewDelegate, MLEmojiLabelDelegate>{
     UIView *_toolBar;
     UITextView *_textView;
     UIButton *_keyboardButton;
