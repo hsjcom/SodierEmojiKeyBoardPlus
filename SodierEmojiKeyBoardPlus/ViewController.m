@@ -19,6 +19,17 @@
 
 @implementation ViewController
 
+static inline NSRegularExpression * NameRegularExpression() {
+    static NSRegularExpression *_nameRegularExpression = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _nameRegularExpression = [[NSRegularExpression alloc] initWithPattern:@"^\\w+" options:NSRegularExpressionCaseInsensitive error:nil];
+    });
+    
+    return _nameRegularExpression;
+}
+
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIKeyboardWillShowNotification
@@ -69,10 +80,16 @@
     [self constructView];
     [self constructKeyBoardView];
     
+    
 //    [self attributedString];
+    
 //    [self textString];
     
-    [self richText];
+//    [self richText];
+    
+//    [self hyperlinkText];
+    
+    [self customLinkText];
 }
 
 - (void)constructView{
@@ -257,7 +274,6 @@
 - (void)textViewDidChange:(UITextView *)textView {
     NSLog(@"textViewDidChange %@", textView.text);
 
-    
     _contentLabel.text = textView.text;
 }
 
@@ -313,7 +329,7 @@
 }
 
 //NSString
-- (void)textString{
+- (void)textString {
     NSString *text = @"对潇潇暮雨洒江天，一番洗清秋。[微笑]渐霜风凄紧，关河冷落，残照当楼。[微笑]是处红衰翠减，苒苒物华休。惟有长江水，无语东流。不忍登高临远，望故乡渺邈，归思难收。[微笑] 叹年来踪迹，何事苦淹留。[微笑] 想佳人、妆楼颙望，误几回、天际识归舟。争知我、倚阑干处，正恁凝愁 [微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑][微笑]";
     _contentLabel.text = text;
     
@@ -340,7 +356,6 @@
     [EMStringStylingConfiguration sharedInstance].defaultFont  = [UIFont fontWithName:@"Avenir-Light" size:15];
     [EMStringStylingConfiguration sharedInstance].strongFont   = [UIFont fontWithName:@"Avenir" size:15];
     [EMStringStylingConfiguration sharedInstance].emphasisFont = [UIFont fontWithName:@"Avenir-LightOblique" size:15];
-    
     
     // Then for the demo I created a bunch of custom styling class to provide examples
     
@@ -374,9 +389,170 @@
      */
     
     // Our big text stored in a string with tags for EMString styling
-    NSString *text = @"<h4>About EMString</h4>\n http://www.hsjer.com [微笑][大兵][微笑][微笑][微笑][大兵][微笑][微笑] <p><strong>EMString</strong> stands for <em><strong>E</strong>asy <strong>M</strong>arkup <strong>S</strong>tring</em>. I hesitated to call it SONSAString : Sick Of NSAttributedString...</p>\n<p>Most of the time if you need to display a text with different styling in it, like \"<strong>This text is bold</strong> but then <em>italic.</em>\", you would use an <code>NSAttributedString</code> and its API. Same thing if suddenly your text is <green><strong>GREEN</strong></green> and then <red><strong>RED</strong></red>...</p><p>Personnaly I don't like it! It clusters my classes with a lot of boilerplate code to find range and apply style, etc...</p>\n<p>This is what <strong>EMString</strong> is about. Use the efficient <u>HTML markup</u> system we all know and get an iOS string stylized in one line of code and behave like you would expect it to.</p>\n<h1>h1 header</h1><h2>h2 header</h2><h3>h3 header</h3><stroke>Stroke text</stroke>\n<strong>strong</strong>\n<em>emphasis</em>\n<u>underline</u>\n<s>strikethrough</s>\n<code>and pretty much whatever you think of...</code>";
+    NSString *text = @"<h4>About EMString</h4>\n<p><strong>EMString</strong> http://www.hsjer.com/ [微笑][大兵][微笑][微笑][微笑][大兵][微笑][微笑] stands for <em><strong>E</strong>asy <strong>M</strong>arkup <strong>S</strong>tring</em>. I hesitated to call it SONSAString : Sick Of NSAttributedString...</p>\n<p>Most of the time if you need to display a text with different styling in it, like \"<strong>This text is bold</strong> but then <em>italic.</em>\", you would use an <code>NSAttributedString</code> and its API. Same thing if suddenly your text is <green><strong>GREEN</strong></green> and then <red><strong>RED</strong></red>...</p><p>Personnaly I don't like it! It clusters my classes with a lot of boilerplate code to find range and apply style, etc...</p>\n<p>This is what <strong>EMString</strong> is about. Use the efficient <u>HTML markup</u> system we all know and get an iOS string stylized in one line of code and behave like you would expect it to.</p>\n<h1>h1 header</h1><h2>h2 header</h2><h3>h3 header</h3><stroke>Stroke text</stroke>\n<strong>strong</strong>\n<em>emphasis</em>\n<u>underline</u>\n<s>strikethrough</s>\n<code>and pretty much whatever you think of...</code>";
+    
     _contentLabel.disableThreeCommon = NO;
     _contentLabel.text = text.attributedString;
+}
+
+//hyperlink
+- (void)hyperlinkText {
+    _contentLabel.linkAttributes = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO] forKey:(NSString *)kCTUnderlineStyleAttributeName];
+    
+    NSString *text = @"哈哈设置可点击文字的范围设置可点击文本的颜色说说";
+    
+    [_contentLabel setText:text afterInheritingLabelAttributesAndConfiguringWithBlock:^ NSMutableAttributedString *(NSMutableAttributedString *mutableAttributedString) {
+         //设置可点击文字的范围
+         NSRange boldRange = [[mutableAttributedString string] rangeOfString:@"设置可点击文字的范围" options:NSCaseInsensitiveSearch];
+
+         //设定可点击文字的的大小
+         UIFont *boldSystemFont = [UIFont boldSystemFontOfSize:16];
+         CTFontRef font = CTFontCreateWithName((__bridge CFStringRef)boldSystemFont.fontName, boldSystemFont.pointSize, NULL);
+
+         if (font) {
+             //设置可点击文本的大小
+             [mutableAttributedString addAttribute:(NSString *)kCTFontAttributeName value:(__bridge id)font range:boldRange];
+             //设置可点击文本的颜色
+             [mutableAttributedString addAttribute:(NSString*)kCTForegroundColorAttributeName value:(id)[[UIColor blueColor] CGColor] range:boldRange];
+             CFRelease(font);
+         }
+         return mutableAttributedString;
+     }];
+    
+    //正则
+    NSRegularExpression *regexp = NameRegularExpression();
+    NSRange linkRange = [regexp rangeOfFirstMatchInString:text options:0 range:NSMakeRange(2, 10)];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.hsjer.com/"]];
+    
+    //设置链接的url
+    [_contentLabel addLinkToURL:url withRange:linkRange];
+}
+
+- (void)customLinkText {
+    NSString *openMarkup = @"<url>";
+    NSString *closeMarkup = @"</url>";
+    NSString *text = @"<url>设置可点击文字的范围</url>设置可点击文本的颜色<url>说说</url>范围<url>范围</url>范围范<url>围</url>范围范围<h4>About EMString</h4>\n<p><strong>EMString</strong> \n <strong>http://www.hsjer.com/</strong> [微笑][大兵][微笑][微笑][微笑][大兵][微笑][微笑]";
+    
+    _contentLabel.text = text.attributedString;
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.hsjer.com/"]];
+    
+    NSMutableAttributedString *styleAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:text.attributedString];
+    
+    NSRange openMarkupRange, closeMarkupRange;
+    NSUInteger markupCount = 0, openMarkupCount = 0, closeMarkupCount = 0;
+    
+    //get openMarkupCount
+    NSMutableAttributedString *styleAttributedString2 = [[NSMutableAttributedString alloc] initWithAttributedString:text.attributedString];
+    while((openMarkupRange = [styleAttributedString2.mutableString rangeOfString:openMarkup]).location != NSNotFound) {
+        openMarkupCount ++;
+        [styleAttributedString2 replaceCharactersInRange:NSMakeRange(openMarkupRange.location, openMarkupRange.length) withString:@""];
+    }
+    
+    //get closeMarkupCount
+    NSMutableAttributedString *styleAttributedString3 = [[NSMutableAttributedString alloc] initWithAttributedString:text.attributedString];
+    while((closeMarkupRange = [styleAttributedString3.mutableString rangeOfString:closeMarkup]).location != NSNotFound) {
+        closeMarkupCount ++;
+        [styleAttributedString3 replaceCharactersInRange:NSMakeRange(closeMarkupRange.location, closeMarkupRange.length) withString:@""];
+    }
+    
+    if (openMarkupCount == closeMarkupCount) {
+        markupCount = openMarkupCount;
+        
+        NSString *realText = [NSString stringWithString:text];
+        realText = [realText stringByReplacingOccurrencesOfString:openMarkup withString:@""];
+        realText = [realText stringByReplacingOccurrencesOfString:closeMarkup withString:@""];
+        
+        _contentLabel.text = realText.attributedString;
+    }
+    
+    for (int i = 0; i < markupCount; i++) {
+        if((openMarkupRange = [styleAttributedString.mutableString rangeOfString:openMarkup]).location != NSNotFound) {
+            
+            // Find range of close markup
+            closeMarkupRange = [styleAttributedString.mutableString rangeOfString:closeMarkup];
+            if (closeMarkupRange.location == NSNotFound) {
+                NSLog(@"Error finding close markup");
+                return;
+            }
+            
+            // Calculate the style range that represent the string between the open and close markups
+            NSRange styleRange = NSMakeRange(openMarkupRange.location, closeMarkupRange.location - openMarkupRange.location - openMarkup.length);
+            
+            if (styleRange.location < text.length && text.length > styleRange.length) {
+                
+                [_contentLabel addLinkToURL:url withRange:styleRange];
+                
+            }
+            
+            [styleAttributedString replaceCharactersInRange:NSMakeRange(openMarkupRange.location, openMarkupRange.length) withString:@""];
+            NSRange closeMarkupRange2 = [styleAttributedString.mutableString rangeOfString:closeMarkup];
+            [styleAttributedString replaceCharactersInRange:NSMakeRange(closeMarkupRange2.location, closeMarkupRange2.length) withString:@""];
+        }
+    }
+}
+
+//自定义文本链接
+- (void)customLinkText2 {
+    NSString *openMarkup = @"<url>";
+    NSString *closeMarkup = @"</url>";
+    NSString *text = @"<url>设置可点击文字的范围</url>设置可点击文本的颜色<url>说说</url>范围<url>范围</url>范围范<url>围</url>范围范围";
+    _contentLabel.text = text;
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.hsjer.com/"]];
+    
+    NSMutableAttributedString *styleAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:text.attributedString];
+    
+    NSRange openMarkupRange, closeMarkupRange;
+    NSUInteger markupCount = 0, openMarkupCount = 0, closeMarkupCount = 0;
+    
+    //get openMarkupCount
+    NSMutableAttributedString *styleAttributedString2 = [[NSMutableAttributedString alloc] initWithAttributedString:text.attributedString];
+    while((openMarkupRange = [styleAttributedString2.mutableString rangeOfString:openMarkup]).location != NSNotFound) {
+        openMarkupCount ++;
+        [styleAttributedString2 replaceCharactersInRange:NSMakeRange(openMarkupRange.location, openMarkupRange.length) withString:@""];
+    }
+    
+    //get closeMarkupCount
+    NSMutableAttributedString *styleAttributedString3 = [[NSMutableAttributedString alloc] initWithAttributedString:text.attributedString];
+    while((closeMarkupRange = [styleAttributedString3.mutableString rangeOfString:closeMarkup]).location != NSNotFound) {
+        closeMarkupCount ++;
+        [styleAttributedString3 replaceCharactersInRange:NSMakeRange(closeMarkupRange.location, closeMarkupRange.length) withString:@""];
+    }
+    
+    if (openMarkupCount == closeMarkupCount) {
+        markupCount = openMarkupCount;
+    }
+    
+    for (int i = 0; i < markupCount; i++) {
+        if((openMarkupRange = [styleAttributedString.mutableString rangeOfString:openMarkup]).location != NSNotFound) {
+            
+            // Find range of close markup
+            closeMarkupRange = [styleAttributedString.mutableString rangeOfString:closeMarkup];
+            if (closeMarkupRange.location == NSNotFound) {
+                NSLog(@"Error finding close markup");
+                return;
+            }
+            
+            // Calculate the style range that represent the string between the open and close markups
+            NSUInteger location = i > 0 ? openMarkupRange.location + (openMarkup.length + closeMarkup.length) * i + openMarkup.length : openMarkupRange.location + openMarkup.length;
+            NSRange styleRange = NSMakeRange(location, closeMarkupRange.location - openMarkupRange.location - openMarkup.length);
+            
+            [_contentLabel addLinkToURL:url withRange:styleRange];
+            
+            [styleAttributedString replaceCharactersInRange:NSMakeRange(openMarkupRange.location, openMarkupRange.length) withString:@""];
+            NSRange closeMarkupRange2 = [styleAttributedString.mutableString rangeOfString:closeMarkup];
+            [styleAttributedString.mutableString replaceCharactersInRange:NSMakeRange(closeMarkupRange2.location, closeMarkupRange2.length) withString:@""];
+        }
+    }
+}
+
+
+#pragma mark - TTTAttributedLabelDelegate
+
+- (void)attributedLabel:(TTTAttributedLabel *)label
+   didSelectLinkWithURL:(NSURL *)url {
+  
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 #pragma mark - MLEmojiLabelDelegate
