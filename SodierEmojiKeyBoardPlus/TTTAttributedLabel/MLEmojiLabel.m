@@ -57,14 +57,14 @@ NSString *const kCustomGlyphAttributeImageName = @"CustomGlyphAttributeImageName
 
 #define kURLActionCount 5
 
-NSString * const kURLActions[] = {@"url->",@"email->",@"phoneNumber->",@"at->",@"poundSign->"};
+NSString *const kURLActions[] = {@"ul->", @"email->", @"phoneNumber->", @"at->", @"poundSign->"};
 
 /**
  *  plist管理器，自定义plist
  */
 @interface MLEmojiLabelRegexPlistManager : NSObject
 
-- (NSDictionary*)emojiDictForKey:(NSString*)key;
+- (NSDictionary*)emojiDictForKey:(NSString *)key;
 
 @property (nonatomic, strong) NSMutableDictionary *emojiDictRecords;
 @property (nonatomic, strong) NSMutableDictionary *emojiRegularExpressions;
@@ -544,7 +544,7 @@ static inline CGFloat TTTFlushFactorForTextAlignment(NSTextAlignment textAlignme
     
     NSUInteger maxIndex = self.isNeedAtAndPoundSign ? kURLActionCount : kURLActionCount - 2;
     for (NSUInteger i = 0; i < maxIndex; i++) {
-        if (self.disableThreeCommon&&i<kURLActionCount-2) {
+        if (self.disableThreeCommon && i < kURLActionCount - 2) {
             continue;
         }
         NSString *urlAction = kURLActions[i];
@@ -552,13 +552,13 @@ static inline CGFloat TTTFlushFactorForTextAlignment(NSTextAlignment textAlignme
             
             //检查是否和之前记录的有交集，有的话则忽略
             for (NSTextCheckingResult *record in results){
-                if (NSMaxRange(NSIntersectionRange(record.range, result.range))>0){
+                if (NSMaxRange(NSIntersectionRange(record.range, result.range)) > 0){
                     return;
                 }
             }
             
             //添加链接
-            NSString *actionString = [NSString stringWithFormat:@"%@%@",urlAction,[self.text substringWithRange:result.range]];
+            NSString *actionString = [NSString stringWithFormat:@"%@%@", urlAction, [self.text substringWithRange:result.range]];
             
             //这里暂时用NSTextCheckingTypeCorrection类型的传递消息吧
             //因为有自定义的类型出现，所以这样方便点。
