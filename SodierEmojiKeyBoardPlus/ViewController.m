@@ -179,7 +179,6 @@ static inline NSRegularExpression * NameRegularExpression() {
 }
 
 - (void)imageBoardClick{
-    
 }
 
 - (void)sendBtnAction {
