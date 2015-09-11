@@ -69,13 +69,14 @@ static inline NSRegularExpression * NameRegularExpression() {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    HBEmojiLabel *titleLabel = [[HBEmojiLabel alloc] initWithFrame:CGRectMake(10, 20, self.view.frame.size.width - 20, 20)];
-    titleLabel.text = @"[大兵] [大兵] I am Soldier [大兵] [大兵]";
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.font = [UIFont systemFontOfSize:20];
-    [self.view addSubview:titleLabel];
-    
+    self.title = @"Emoji Label & keyboard";
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    HBEmojiLabel *titleLabel = [[HBEmojiLabel alloc] initWithFrame:CGRectMake(10, 74, self.view.frame.size.width - 20, 20)];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.font = [UIFont systemFontOfSize:15];
+    titleLabel.text = @"[大兵] [大兵]I am Soldier[大兵][大兵]";
+    [self.view addSubview:titleLabel];
     
     [self constructView];
     [self constructKeyBoardView];
@@ -85,15 +86,15 @@ static inline NSRegularExpression * NameRegularExpression() {
     
 //    [self textString];
     
-//    [self richText];
+    [self richText];
     
 //    [self hyperlinkText];
     
-    [self customLinkText];
+//    [self customLinkText];
 }
 
 - (void)constructView{
-    _contentLabel = [[HBEmojiLabel alloc] initWithFrame:CGRectMake(10, 50, self.view.frame.size.width - 20, 300)];//CGRectMake(10, 20, self.view.frame.size.width - 20, 300)
+    _contentLabel = [[HBEmojiLabel alloc] initWithFrame:CGRectMake(10, 100, self.view.frame.size.width - 20, 300)];
     _contentLabel.backgroundColor = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.1];
     _contentLabel.textAlignment = NSTextAlignmentLeft;
     _contentLabel.font = [UIFont systemFontOfSize:18];
@@ -352,7 +353,7 @@ static inline NSRegularExpression * NameRegularExpression() {
 
 //富文本
 - (void)richText {
-    [EMStringStylingConfiguration sharedInstance].defaultFont  = [UIFont fontWithName:@"Avenir-Light" size:15];
+    [EMStringStylingConfiguration sharedInstance].defaultFont  = [UIFont italicSystemFontOfSize:15];//[UIFont fontWithName:@"Avenir-Light" size:15];
     [EMStringStylingConfiguration sharedInstance].strongFont   = [UIFont fontWithName:@"Avenir" size:15];
     [EMStringStylingConfiguration sharedInstance].emphasisFont = [UIFont fontWithName:@"Avenir-LightOblique" size:15];
     
@@ -388,7 +389,7 @@ static inline NSRegularExpression * NameRegularExpression() {
      */
     
     // Our big text stored in a string with tags for EMString styling
-    NSString *text = @"<h4>About EMString</h4>\n<p><strong>EMString</strong> http://www.hsjer.com/ [微笑][大兵][微笑][微笑][微笑][大兵][微笑][微笑] stands for <em><strong>E</strong>asy <strong>M</strong>arkup <strong>S</strong>tring</em>. I hesitated to call it SONSAString : Sick Of NSAttributedString...</p>\n<p>Most of the time if you need to display a text with different styling in it, like \"<strong>This text is bold</strong> but then <em>italic.</em>\", you would use an <code>NSAttributedString</code> and its API. Same thing if suddenly your text is <green><strong>GREEN</strong></green> and then <red><strong>RED</strong></red>...</p><p>Personnaly I don't like it! It clusters my classes with a lot of boilerplate code to find range and apply style, etc...</p>\n<p>This is what <strong>EMString</strong> is about. Use the efficient <u>HTML markup</u> system we all know and get an iOS string stylized in one line of code and behave like you would expect it to.</p>\n<h1>h1 header</h1><h2>h2 header</h2><h3>h3 header</h3><stroke>Stroke text</stroke>\n<strong>strong</strong>\n<em>emphasis</em>\n<u>underline</u>\n<s>strikethrough</s>\n<code>and pretty much whatever you think of...</code>";
+    NSString *text = @"富文本<h4>About EMString</h4>\n<p><strong>EMString</strong> http://www.hsjer.com/ [微笑][大兵][微笑][微笑][微笑][大兵][微笑][微笑] stands for <em><strong>E</strong>asy <strong>M</strong>arkup <strong>S</strong>tring</em>. I hesitated to call it SONSAString : Sick Of NSAttributedString...</p>\n<p>Most of the time if you need to display a text with different styling in it, like \"<strong>This text is bold</strong> but then <em>italic.</em>\", you would use an <code>NSAttributedString</code> and its API. Same thing if suddenly your text is <green><strong>GREEN</strong></green> and then <red><strong>RED</strong></red>...</p><p>Personnaly I don't like it! It clusters my classes with a lot of boilerplate code to find range and apply style, etc...</p>\n<p>This is what <strong>EMString</strong> is about. Use the efficient <u>HTML markup</u> system we all know and get an iOS string stylized in one line of code and behave like you would expect it to.</p>\n<h1>h1 header</h1><h2>h2 header</h2><h3>h3 header</h3><stroke>Stroke text</stroke>\n<strong>strong</strong>\n<em>emphasis</em>\n<u>underline</u>\n<s>strikethrough</s>\n<code>and pretty much whatever you think of...</code>";
     
     _contentLabel.disableThreeCommon = NO;
     _contentLabel.text = text.attributedString;
@@ -430,7 +431,7 @@ static inline NSRegularExpression * NameRegularExpression() {
 - (void)customLinkText {
     NSString *openMarkup = @"<url>";
     NSString *closeMarkup = @"</url>";
-    NSString *text = @"<url>设置可点击文字的范围</url>设置可点击文本的颜色<url>说说</url>范围<url>范围</url>范围范<url>围</url>范围范围<h4>About EMString</h4>\n<p><strong>EMString</strong> \n <strong>http://www.hsjer.com/</strong> [微笑][大兵][微笑][微笑][微笑][大兵][微笑][微笑]";
+    NSString *text = @"[微笑]<url>设置可点击文字的范围</url>设置可点击文本的颜色<url>说说</url>范围<url>范围</url>范围范<url>围</url>范围范围<h4>About EMString</h4>\n<p><strong>EMString</strong> \n <strong>http://www.hsjer.com/</strong> [微笑][大兵][微笑][微笑][微笑][大兵][微笑][微笑]";
     
     _contentLabel.text = text.attributedString;
     
@@ -481,7 +482,6 @@ static inline NSRegularExpression * NameRegularExpression() {
             if (styleRange.location < text.length && text.length > styleRange.length) {
                 
                 [_contentLabel addLinkToURL:url withRange:styleRange];
-                
             }
             
             [styleAttributedString replaceCharactersInRange:NSMakeRange(openMarkupRange.location, openMarkupRange.length) withString:@""];
@@ -551,7 +551,7 @@ static inline NSRegularExpression * NameRegularExpression() {
 - (void)attributedLabel:(TTTAttributedLabel *)label
    didSelectLinkWithURL:(NSURL *)url {
   
-    [[UIApplication sharedApplication] openURL:url];
+//    [[UIApplication sharedApplication] openURL:url];
 }
 
 #pragma mark - MLEmojiLabelDelegate

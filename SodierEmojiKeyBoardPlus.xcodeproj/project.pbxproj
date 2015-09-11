@@ -188,6 +188,7 @@
 		B259EFBD1AC54437000A6147 /* EmojiButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B259EFBC1AC54437000A6147 /* EmojiButton.m */; };
 		B259EFC31AC5603E000A6147 /* MLEmojiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B259EFC01AC5603E000A6147 /* MLEmojiLabel.m */; };
 		B259EFC41AC5603E000A6147 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B259EFC21AC5603E000A6147 /* TTTAttributedLabel.m */; };
+		B289EF501B90527C00E19BB9 /* SJRichLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B289EF4F1B90527C00E19BB9 /* SJRichLabel.m */; };
 		B2AFCAD41AC91CB000E21B86 /* deleteEmoji_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2AFCACC1AC91CB000E21B86 /* deleteEmoji_hl@2x.png */; };
 		B2AFCAD51AC91CB000E21B86 /* deleteEmoji@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2AFCACD1AC91CB000E21B86 /* deleteEmoji@2x.png */; };
 		B2AFCAD71AC91CB000E21B86 /* emojiBoardBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2AFCACF1AC91CB000E21B86 /* emojiBoardBtn@2x.png */; };
@@ -256,6 +257,8 @@
 		B2E122921AC8305C00A56876 /* faceMap_en.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2E122901AC8305C00A56876 /* faceMap_en.plist */; };
 		B2E122941AC8308600A56876 /* EmojiImageMap.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2E122931AC8308600A56876 /* EmojiImageMap.plist */; };
 		B2E122971AC83C8E00A56876 /* HBEmojiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E122961AC83C8E00A56876 /* HBEmojiLabel.m */; };
+		B2FE190B1BA1839900BF2ACB /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FE190A1BA1839900BF2ACB /* RootViewController.m */; };
+		B2FE190E1BA183C600BF2ACB /* RichViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FE190D1BA183C600BF2ACB /* RichViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -460,6 +463,8 @@
 		B259EFC01AC5603E000A6147 /* MLEmojiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLEmojiLabel.m; sourceTree = "<group>"; };
 		B259EFC11AC5603E000A6147 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
 		B259EFC21AC5603E000A6147 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
+		B289EF4E1B90527C00E19BB9 /* SJRichLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJRichLabel.h; sourceTree = "<group>"; };
+		B289EF4F1B90527C00E19BB9 /* SJRichLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJRichLabel.m; sourceTree = "<group>"; };
 		B2AFCACC1AC91CB000E21B86 /* deleteEmoji_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deleteEmoji_hl@2x.png"; sourceTree = "<group>"; };
 		B2AFCACD1AC91CB000E21B86 /* deleteEmoji@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deleteEmoji@2x.png"; sourceTree = "<group>"; };
 		B2AFCACF1AC91CB000E21B86 /* emojiBoardBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emojiBoardBtn@2x.png"; sourceTree = "<group>"; };
@@ -533,6 +538,10 @@
 		B2E122931AC8308600A56876 /* EmojiImageMap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmojiImageMap.plist; sourceTree = "<group>"; };
 		B2E122951AC83C8E00A56876 /* HBEmojiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBEmojiLabel.h; sourceTree = "<group>"; };
 		B2E122961AC83C8E00A56876 /* HBEmojiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBEmojiLabel.m; sourceTree = "<group>"; };
+		B2FE19091BA1839900BF2ACB /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		B2FE190A1BA1839900BF2ACB /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		B2FE190C1BA183C600BF2ACB /* RichViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichViewController.h; sourceTree = "<group>"; };
+		B2FE190D1BA183C600BF2ACB /* RichViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -581,6 +590,10 @@
 				B259EDB11AC16D77000A6147 /* AppDelegate.m */,
 				B259EDB31AC16D77000A6147 /* ViewController.h */,
 				B259EDB41AC16D77000A6147 /* ViewController.m */,
+				B2FE19091BA1839900BF2ACB /* RootViewController.h */,
+				B2FE190A1BA1839900BF2ACB /* RootViewController.m */,
+				B2FE190C1BA183C600BF2ACB /* RichViewController.h */,
+				B2FE190D1BA183C600BF2ACB /* RichViewController.m */,
 				B259EDB61AC16D77000A6147 /* Main.storyboard */,
 				B259EDB91AC16D77000A6147 /* Images.xcassets */,
 				B259EDBB1AC16D77000A6147 /* LaunchScreen.xib */,
@@ -832,6 +845,8 @@
 				B259EFC21AC5603E000A6147 /* TTTAttributedLabel.m */,
 				B2E122951AC83C8E00A56876 /* HBEmojiLabel.h */,
 				B2E122961AC83C8E00A56876 /* HBEmojiLabel.m */,
+				B289EF4E1B90527C00E19BB9 /* SJRichLabel.h */,
+				B289EF4F1B90527C00E19BB9 /* SJRichLabel.m */,
 			);
 			path = TTTAttributedLabel;
 			sourceTree = "<group>";
@@ -1246,11 +1261,14 @@
 			files = (
 				B259EFC31AC5603E000A6147 /* MLEmojiLabel.m in Sources */,
 				B2C4A9941B883ED500B6DD46 /* EMMarkupProperty.m in Sources */,
+				B289EF501B90527C00E19BB9 /* SJRichLabel.m in Sources */,
 				B259EFBD1AC54437000A6147 /* EmojiButton.m in Sources */,
 				B259EDB51AC16D77000A6147 /* ViewController.m in Sources */,
 				B2C4A9951B883ED500B6DD46 /* EMStringStylingConfiguration.m in Sources */,
 				B2C4A9961B883ED500B6DD46 /* EMStylingClass.m in Sources */,
 				B259EFC41AC5603E000A6147 /* TTTAttributedLabel.m in Sources */,
+				B2FE190B1BA1839900BF2ACB /* RootViewController.m in Sources */,
+				B2FE190E1BA183C600BF2ACB /* RichViewController.m in Sources */,
 				B259EDD91AC16F14000A6147 /* EmojiBoard.m in Sources */,
 				B259EDB21AC16D77000A6147 /* AppDelegate.m in Sources */,
 				B2C4A9971B883ED500B6DD46 /* NSString+EMAdditions.m in Sources */,

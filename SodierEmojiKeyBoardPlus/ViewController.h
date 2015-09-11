@@ -10,6 +10,8 @@
 #import "EmojiBoard.h"
 #import "HBEmojiLabel.h"
 
+#import "SJRichLabel.h"
+
 @interface ViewController : UIViewController<EmojiBoardDelegate, UITextViewDelegate, MLEmojiLabelDelegate>{
     UIView *_toolBar;
     UITextView *_textView;

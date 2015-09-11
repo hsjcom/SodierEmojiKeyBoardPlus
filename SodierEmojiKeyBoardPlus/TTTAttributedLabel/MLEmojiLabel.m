@@ -157,6 +157,8 @@ NSString *const kURLActions[] = {@"ul->", @"email->", @"phoneNumber->", @"at->",
 
 @implementation MLEmojiLabel
 
+@dynamic delegate;
+
 #pragma mark - 表情包字典
 + (NSDictionary *)emojiDictionary {
     static NSDictionary *emojiDictionary = nil;
@@ -538,7 +540,7 @@ static inline CGFloat TTTFlushFactorForTextAlignment(NSTextAlignment textAlignme
     
     NSRange stringRange = NSMakeRange(0, mutableAttributedString.length);
     
-    NSRegularExpression * const regexps[] = {kURLRegularExpression(), kEmailRegularExpression(),kPhoneNumerRegularExpression(), kAtRegularExpression(), kPoundSignRegularExpression()};
+    NSRegularExpression *const regexps[] = {kURLRegularExpression(), kEmailRegularExpression(),kPhoneNumerRegularExpression(), kAtRegularExpression(), kPoundSignRegularExpression()};
     
     NSMutableArray *results = [NSMutableArray array];
     
