@@ -10,7 +10,11 @@
 
 ##Rich Text 富文本
   
-
+##Screen shot
+ 
+ ![image](https://github.com/hsjcom/SodierEmojiKeyBoardPlus/blob/master/iOSSimulatorScreenShot2015091102.png) 
+ 
+ ![image](https://github.com/hsjcom/SodierEmojiKeyBoardPlus/blob/master/iOSSimulatorScreenShot2015091101.png)  
  
 
 *I am soldier!*
