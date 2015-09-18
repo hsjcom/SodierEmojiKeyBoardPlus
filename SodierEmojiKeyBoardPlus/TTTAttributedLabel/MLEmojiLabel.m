@@ -232,7 +232,15 @@ static CGFloat widthCallback(void *refCon) {
     NSMutableDictionary *mutableInactiveLinkAttributes = [NSMutableDictionary dictionary];
     [mutableInactiveLinkAttributes setObject:[NSNumber numberWithBool:NO] forKey:(NSString *)kCTUnderlineStyleAttributeName];
     
+    // 链接字体颜色
     UIColor *commonLinkColor = [UIColor colorWithRed:0.112 green:0.000 blue:0.791 alpha:1.000];
+    
+    /*
+    //链接下划线
+    [mutableLinkAttributes setObject:@(NSUnderlineStyleSingle) forKey:NSUnderlineStyleAttributeName];
+    //链接下划线 颜色
+    [mutableLinkAttributes setObject:[UIColor redColor] forKey:NSUnderlineColorAttributeName];
+    */
     
     //点击时候的背景色
     [mutableActiveLinkAttributes setValue:(__bridge id)[[UIColor colorWithWhite:0.631 alpha:1.000] CGColor] forKey:(NSString *)kTTTBackgroundFillColorAttributeName];
