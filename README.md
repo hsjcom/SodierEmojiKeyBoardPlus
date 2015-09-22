@@ -1,5 +1,5 @@
 # SodierEmojiKeyBoardPlus
-支持自定义emoji表情，icon font , FontAwesome,斜体，超链接，粗体，下划线，字体，颜色，镂空字体等富文本
+支持自定义emoji表情，icon font，FontAwesome， 斜体，超链接，粗体，下划线，字体，颜色，镂空字体等富文本
  * Thanks for `MLEmojiLabel` & `EMString`
 
 ##EmojiKeyBoard
@@ -9,12 +9,15 @@
 
 
 ##Rich Text 富文本
+
+##icon font
+* FontAwesome
   
 ##Screen shot
  
- ![image](https://github.com/hsjcom/SodierEmojiKeyBoardPlus/blob/master/iOSSimulatorScreenShot2015091102.png) 
+ ![image](https://github.com/hsjcom/SodierEmojiKeyBoardPlus/blob/master/2B67E861-F3A4-4106-9DC5-5F3CED57B083.png) 
  
- ![image](https://github.com/hsjcom/SodierEmojiKeyBoardPlus/blob/master/iOSSimulatorScreenShot2015091101.png)  
+ ![image](https://github.com/hsjcom/SodierEmojiKeyBoardPlus/blob/master/779CF3C9-A40E-481B-A6EC-7E36FD986A5F.png)  
  
 
 *I am soldier!*
