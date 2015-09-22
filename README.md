@@ -1,5 +1,5 @@
 # SodierEmojiKeyBoardPlus
-支持emoji表情，斜体，超链接，粗体，下划线，字体颜色，镂空字体等富文本
+支持自定义emoji表情，icon font , FontAwesome,斜体，超链接，粗体，下划线，字体，颜色，镂空字体等富文本
  * Thanks for `MLEmojiLabel` & `EMString`
 
 ##EmojiKeyBoard
