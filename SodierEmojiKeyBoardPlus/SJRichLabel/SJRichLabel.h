@@ -11,6 +11,11 @@
 @interface SJRichLabel : HBEmojiLabel
 
 /**
+ * 是否支持icon font
+ */
+@property (nonatomic, assign) BOOL iconFontEnable;
+
+/**
  * 富文本，*使用此字段有效
  */
 @property (nonatomic, strong) NSString *richText;

@@ -8,6 +8,7 @@
 
 #import "SJRichLabel.h"
 #import "NSString+EMAdditions.h"
+#import "FontAwesome.h"
 
 @implementation SJRichLabel
 
@@ -22,7 +23,7 @@ NSString *const kLinkCloseMarkup = @"</url>";
 
 //富文本
 - (void)richTextConfig {
-    [EMStringStylingConfiguration sharedInstance].defaultFont = [UIFont systemFontOfSize:self.font.pointSize];
+    [EMStringStylingConfiguration sharedInstance].defaultFont = self.iconFontEnable ? [FontAwesome fontWithSize:self.font.pointSize] : [UIFont systemFontOfSize:self.font.pointSize];
     [EMStringStylingConfiguration sharedInstance].strongFont = [UIFont boldSystemFontOfSize:self.font.pointSize];
     [EMStringStylingConfiguration sharedInstance].emphasisFont = [SJRichLabel italicFontOfSize:self.font.pointSize];
     
