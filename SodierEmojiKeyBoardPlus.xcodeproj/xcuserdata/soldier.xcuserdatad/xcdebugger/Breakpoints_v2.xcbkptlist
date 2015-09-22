@@ -15,8 +15,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "254"
             endingLineNumber = "254"
-            landmarkName = "@implementation ViewController"
-            landmarkType = "3">
+            landmarkName = "-keyboardWillHide:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "385"
             endingLineNumber = "385"
-            landmarkName = "-mlEmojiLabel:didSelectLink:withType:"
+            landmarkName = "-richText"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
