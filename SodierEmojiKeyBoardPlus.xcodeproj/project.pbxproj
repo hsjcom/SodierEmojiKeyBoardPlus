@@ -200,7 +200,7 @@
 		B2C4A9971B883ED500B6DD46 /* NSString+EMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C4A9931B883ED500B6DD46 /* NSString+EMAdditions.m */; };
 		B2CF443D1BAFA88F00BC7985 /* FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CF443B1BAFA88F00BC7985 /* FontAwesome.m */; };
 		B2CF443E1BAFA88F00BC7985 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = B2CF443C1BAFA88F00BC7985 /* FontAwesome.otf */; };
-		B2CF44481BAFB2D700BC7985 /* HBEmojiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CF44411BAFB2D700BC7985 /* HBEmojiLabel.m */; };
+		B2CF44481BAFB2D700BC7985 /* SJEmojiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CF44411BAFB2D700BC7985 /* SJEmojiLabel.m */; };
 		B2CF44491BAFB2D700BC7985 /* MLEmojiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CF44431BAFB2D700BC7985 /* MLEmojiLabel.m */; };
 		B2CF444A1BAFB2D700BC7985 /* SJRichLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CF44451BAFB2D700BC7985 /* SJRichLabel.m */; };
 		B2CF444B1BAFB2D700BC7985 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CF44471BAFB2D700BC7985 /* TTTAttributedLabel.m */; };
@@ -481,8 +481,8 @@
 		B2CF443A1BAFA88F00BC7985 /* FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontAwesome.h; sourceTree = "<group>"; };
 		B2CF443B1BAFA88F00BC7985 /* FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontAwesome.m; sourceTree = "<group>"; };
 		B2CF443C1BAFA88F00BC7985 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
-		B2CF44401BAFB2D700BC7985 /* HBEmojiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBEmojiLabel.h; sourceTree = "<group>"; };
-		B2CF44411BAFB2D700BC7985 /* HBEmojiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBEmojiLabel.m; sourceTree = "<group>"; };
+		B2CF44401BAFB2D700BC7985 /* SJEmojiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJEmojiLabel.h; sourceTree = "<group>"; };
+		B2CF44411BAFB2D700BC7985 /* SJEmojiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJEmojiLabel.m; sourceTree = "<group>"; };
 		B2CF44421BAFB2D700BC7985 /* MLEmojiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLEmojiLabel.h; sourceTree = "<group>"; };
 		B2CF44431BAFB2D700BC7985 /* MLEmojiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLEmojiLabel.m; sourceTree = "<group>"; };
 		B2CF44441BAFB2D700BC7985 /* SJRichLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJRichLabel.h; sourceTree = "<group>"; };
@@ -872,8 +872,8 @@
 		B2CF443F1BAFB2D700BC7985 /* SJRichLabel */ = {
 			isa = PBXGroup;
 			children = (
-				B2CF44401BAFB2D700BC7985 /* HBEmojiLabel.h */,
-				B2CF44411BAFB2D700BC7985 /* HBEmojiLabel.m */,
+				B2CF44401BAFB2D700BC7985 /* SJEmojiLabel.h */,
+				B2CF44411BAFB2D700BC7985 /* SJEmojiLabel.m */,
 				B2CF44421BAFB2D700BC7985 /* MLEmojiLabel.h */,
 				B2CF44431BAFB2D700BC7985 /* MLEmojiLabel.m */,
 				B2CF44441BAFB2D700BC7985 /* SJRichLabel.h */,
@@ -1288,7 +1288,7 @@
 				B2FE190B1BA1839900BF2ACB /* RootViewController.m in Sources */,
 				B2FE190E1BA183C600BF2ACB /* RichViewController.m in Sources */,
 				B259EDD91AC16F14000A6147 /* EmojiBoard.m in Sources */,
-				B2CF44481BAFB2D700BC7985 /* HBEmojiLabel.m in Sources */,
+				B2CF44481BAFB2D700BC7985 /* SJEmojiLabel.m in Sources */,
 				B259EDB21AC16D77000A6147 /* AppDelegate.m in Sources */,
 				B2CF444A1BAFB2D700BC7985 /* SJRichLabel.m in Sources */,
 				B2C4A9971B883ED500B6DD46 /* NSString+EMAdditions.m in Sources */,

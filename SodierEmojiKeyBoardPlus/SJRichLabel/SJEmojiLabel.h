@@ -1,5 +1,5 @@
 //
-//  HBEmojiLabel.h
+//  SJEmojiLabel.h
 //  SodierEmojiKeyBoardPlus
 //
 //  Created by Soldier on 15/3/29.
@@ -8,7 +8,7 @@
 
 #import "MLEmojiLabel.h"
 
-@interface HBEmojiLabel : MLEmojiLabel
+@interface SJEmojiLabel : MLEmojiLabel
 
 - (CGSize)sizeWithConstrainedToWidth:(CGFloat)width;
 

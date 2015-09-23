@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "EmojiBoard.h"
-#import "HBEmojiLabel.h"
+#import "SJEmojiLabel.h"
 
 #import "SJRichLabel.h"
 
@@ -32,7 +32,7 @@
     EmojiBoard *_emojiBoard;
     UIView *_imageBoard;
     
-    HBEmojiLabel *_contentLabel;
+    SJEmojiLabel *_contentLabel;
 }
 
 

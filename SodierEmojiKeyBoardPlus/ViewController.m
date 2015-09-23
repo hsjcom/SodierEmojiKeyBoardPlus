@@ -72,7 +72,7 @@ static inline NSRegularExpression * NameRegularExpression() {
     self.title = @"Emoji Label & keyboard";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    HBEmojiLabel *titleLabel = [[HBEmojiLabel alloc] initWithFrame:CGRectMake(10, 74, self.view.frame.size.width - 20, 20)];
+    SJEmojiLabel *titleLabel = [[SJEmojiLabel alloc] initWithFrame:CGRectMake(10, 74, self.view.frame.size.width - 20, 20)];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.font = [UIFont systemFontOfSize:15];
     titleLabel.text = @"[大兵] [大兵]I am Soldier[大兵][大兵]";
@@ -94,7 +94,7 @@ static inline NSRegularExpression * NameRegularExpression() {
 }
 
 - (void)constructView{
-    _contentLabel = [[HBEmojiLabel alloc] initWithFrame:CGRectMake(10, 100, self.view.frame.size.width - 20, 300)];
+    _contentLabel = [[SJEmojiLabel alloc] initWithFrame:CGRectMake(10, 100, self.view.frame.size.width - 20, 300)];
     _contentLabel.backgroundColor = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.1];
     _contentLabel.textAlignment = NSTextAlignmentLeft;
     _contentLabel.font = [UIFont systemFontOfSize:18];

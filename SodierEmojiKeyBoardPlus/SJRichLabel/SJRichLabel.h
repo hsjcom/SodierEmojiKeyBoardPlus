@@ -3,12 +3,12 @@
 //  SodierEmojiKeyBoardPlus
 //
 //  Created by Soldier on 15/8/28.
-//  Copyright (c) 2015年 Soldier. All rights reserved.
+//  Copyright (c) 2015年 Shaojie Hong. All rights reserved.
 //
 
-#import "HBEmojiLabel.h"
+#import "SJEmojiLabel.h"
 
-@interface SJRichLabel : HBEmojiLabel
+@interface SJRichLabel : SJEmojiLabel
 
 /**
  * 是否支持icon font

@@ -1,14 +1,14 @@
 //
-//  HBEmojiLabel.m
+//  SJEmojiLabel.m
 //  SodierEmojiKeyBoardPlus
 //
 //  Created by Soldier on 15/3/29.
 //  Copyright (c) 2015年 Soldier. All rights reserved.
 //
 
-#import "HBEmojiLabel.h"
+#import "SJEmojiLabel.h"
 
-@implementation HBEmojiLabel
+@implementation SJEmojiLabel
 
 /*
  * Readme
@@ -53,14 +53,14 @@
                      font:(UIFont *)font
        constrainedToWidth:(CGFloat)width {
     
-    return [HBEmojiLabel heightWithText:text font:font constrainedToWidth:width lineSpacing:4];
+    return [SJEmojiLabel heightWithText:text font:font constrainedToWidth:width lineSpacing:4];
 }
 
 + (CGFloat)heightWithText:(id)text
                      font:(UIFont *)font
        constrainedToWidth:(CGFloat)width
               lineSpacing:(CGFloat)lineSpacing {
-    HBEmojiLabel *label = [[HBEmojiLabel alloc] init];
+    SJEmojiLabel *label = [[SJEmojiLabel alloc] init];
     label.font = font;
     label.lineSpacing = lineSpacing;
     label.text = text;
@@ -72,7 +72,7 @@
                      font:(UIFont *)font
        constrainedToWidth:(CGFloat)width
             numberOfLines:(NSInteger)numberOfLines {
-    HBEmojiLabel *label = [[HBEmojiLabel alloc] init];
+    SJEmojiLabel *label = [[SJEmojiLabel alloc] init];
     label.font = font;
     label.numberOfLines = numberOfLines;
     label.text = text;
@@ -84,7 +84,7 @@
 + (CGSize)sizeWithText:(id)text
                   font:(UIFont *)font
     constrainedToWidth:(CGFloat)width {
-    HBEmojiLabel *label = [[HBEmojiLabel alloc] init];
+    SJEmojiLabel *label = [[SJEmojiLabel alloc] init];
     label.font = font;
     label.lineSpacing = 4;
     label.text = text;
@@ -96,7 +96,7 @@
                                   font:(UIFont *)font
                     constrainedToWidth:(CGFloat)width
                            lineSpacing:(CGFloat)lineSpacing {
-    HBEmojiLabel *label = [[HBEmojiLabel alloc] init];
+    SJEmojiLabel *label = [[SJEmojiLabel alloc] init];
     label.font = font;
     label.lineSpacing = lineSpacing;
     
