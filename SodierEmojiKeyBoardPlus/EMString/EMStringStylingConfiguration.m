@@ -212,6 +212,17 @@
 }
 
 
+#pragma mark - lineSpacing
+
+/**
+ *  by Soldier
+ *  The lineSpacing for default markup.
+ */
+- (CGFloat)lineSpacing {
+    return _lineSpacing;
+}
+
+
 #pragma mark - Options
 
 

@@ -72,7 +72,15 @@
 - (NSAttributedString *)defaultStyling:(NSAttributedString *)attributedString {
     EMStylingClass *stylingClass = [[EMStylingClass alloc] init];
     stylingClass.markup = kEMDefaultMarkup;
-    stylingClass.attributes = @{NSFontAttributeName : [EMStringStylingConfiguration sharedInstance].defaultFont, NSForegroundColorAttributeName : [EMStringStylingConfiguration sharedInstance].defaultColor };
+    
+    /**
+     * by Soldier
+     * lineSpacing
+     */
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineSpacing = [EMStringStylingConfiguration sharedInstance].lineSpacing;
+    
+    stylingClass.attributes = @{NSFontAttributeName : [EMStringStylingConfiguration sharedInstance].defaultFont, NSForegroundColorAttributeName : [EMStringStylingConfiguration sharedInstance].defaultColor, NSParagraphStyleAttributeName:paragraphStyle};
     return [self applyStylingClass:stylingClass forAttributedString:attributedString];
 }
 
@@ -175,8 +183,7 @@
     stylingClass.attributes      = @{NSFontAttributeName : [EMStringStylingConfiguration sharedInstance].h6Font, NSForegroundColorAttributeName : [EMStringStylingConfiguration sharedInstance].h6Color };
     stylingClass.displayBlock    = ![EMStringStylingConfiguration sharedInstance].h6DisplayInline;
     attributedString             = [self applyStylingClass:stylingClass forAttributedString:attributedString];
-    
-    
+
     return attributedString;
 }
 

@@ -27,23 +27,19 @@
     _richLabel.backgroundColor = [UIColor whiteColor];
     _richLabel.iconFontEnable = YES;
     _richLabel.font = [UIFont systemFontOfSize:15];
+    _richLabel.lineSpacing = 0;
     [self.view addSubview:_richLabel];
     
     [self constructText];
     [self setRichText];
     
     
-    
-    for (NSString* family in [UIFont familyNames])
-    {
+    for (NSString *family in [UIFont familyNames]) {
         NSLog(@"%@", family);
-        for (NSString* name in [UIFont fontNamesForFamilyName: family])
-        {
+        for (NSString *name in [UIFont fontNamesForFamilyName:family]) {
             NSLog(@"  %@", name);
         }
     }
-    
-
 }
 
 - (void)constructText {

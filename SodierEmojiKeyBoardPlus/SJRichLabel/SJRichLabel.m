@@ -26,6 +26,7 @@ NSString *const kLinkCloseMarkup = @"</url>";
     [EMStringStylingConfiguration sharedInstance].defaultFont = self.iconFontEnable ? [FontAwesome fontWithSize:self.font.pointSize] : [UIFont systemFontOfSize:self.font.pointSize];
     [EMStringStylingConfiguration sharedInstance].strongFont = [UIFont boldSystemFontOfSize:self.font.pointSize];
     [EMStringStylingConfiguration sharedInstance].emphasisFont = [SJRichLabel italicFontOfSize:self.font.pointSize];
+    [EMStringStylingConfiguration sharedInstance].lineSpacing = self.lineSpacing;
     
     // Then for the demo I created a bunch of custom styling class to provide examples
     

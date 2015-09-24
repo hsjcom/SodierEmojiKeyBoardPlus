@@ -49,6 +49,12 @@
 @property (strong, nonatomic) UIColor *defaultColor;
 
 /**
+ *  by Soldier
+ *  The lineSpacing for default markup.
+ */
+@property (assign, nonatomic) CGFloat lineSpacing;
+
+/**
  *  The font for strong markup.
  */
 @property (strong, nonatomic) UIFont *strongFont;
