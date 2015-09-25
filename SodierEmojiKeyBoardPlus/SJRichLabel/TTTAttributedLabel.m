@@ -1452,6 +1452,13 @@ afterInheritingLabelAttributesAndConfiguringWithBlock:(NSMutableAttributedString
     if (!self.activeLink) {
         [super touchesBegan:touches withEvent:event];
     }
+    
+    /**
+     * by Soldier
+     * 解决在某些view，eg tableview tableview 上 touchesEnded 无法捕捉问题,可在touchesBegan提前调用
+     * 并注释touchesEnded里的调用
+     */
+//    [self toucheMethod];
 }
 
 - (void)touchesMoved:(NSSet *)touches
@@ -1472,9 +1479,39 @@ afterInheritingLabelAttributesAndConfiguringWithBlock:(NSMutableAttributedString
            withEvent:(UIEvent *)event
 {
     if (self.activeLink) {
+        [self toucheMethod];
+    } else {
+        [super touchesEnded:touches withEvent:event];
+    }
+}
+
+//MARK:molon 修改,需要继承
+- (BOOL)didSelectLinkWithTextCheckingResult:(NSTextCheckingResult*)result
+{
+    return NO;
+}
+//..
+
+- (void)touchesCancelled:(NSSet *)touches
+               withEvent:(UIEvent *)event
+{
+    if (self.activeLink) {
+        self.activeLink = nil;
+    } else {
+        [super touchesCancelled:touches withEvent:event];
+    }
+}
+
+/**
+ * by Soldier
+ * 解决在某些view，eg tableview tableview 上 touchesEnded 无法捕捉问题,可在touchesBegan提前调用
+ * 并注释touchesEnded里的调用
+ */
+- (void)toucheMethod {
+    if (self.activeLink) {
         NSTextCheckingResult *result = self.activeLink;
         self.activeLink = nil;
-
+        
         switch (result.resultType) {
             case NSTextCheckingTypeLink:
                 if ([self.delegate respondsToSelector:@selector(attributedLabel:didSelectLinkWithURL:)]) {
@@ -1511,7 +1548,7 @@ afterInheritingLabelAttributesAndConfiguringWithBlock:(NSMutableAttributedString
             default:
                 break;
         }
-
+        
         //MARK:molon 修改,需要继承
         if ([self didSelectLinkWithTextCheckingResult:result]){
             return;
@@ -1522,25 +1559,6 @@ afterInheritingLabelAttributesAndConfiguringWithBlock:(NSMutableAttributedString
         if ([self.delegate respondsToSelector:@selector(attributedLabel:didSelectLinkWithTextCheckingResult:)]) {
             [self.delegate attributedLabel:self didSelectLinkWithTextCheckingResult:result];
         }
-    } else {
-        [super touchesEnded:touches withEvent:event];
-    }
-}
-
-//MARK:molon 修改,需要继承
-- (BOOL)didSelectLinkWithTextCheckingResult:(NSTextCheckingResult*)result
-{
-    return NO;
-}
-//..
-
-- (void)touchesCancelled:(NSSet *)touches
-               withEvent:(UIEvent *)event
-{
-    if (self.activeLink) {
-        self.activeLink = nil;
-    } else {
-        [super touchesCancelled:touches withEvent:event];
     }
 }
 
