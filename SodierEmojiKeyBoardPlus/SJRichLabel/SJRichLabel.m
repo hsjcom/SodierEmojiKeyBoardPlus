@@ -109,11 +109,13 @@ NSString *const kLinkCloseMarkup = @"</url>";
             // Calculate the style range that represent the string between the open and close markups
             NSRange styleRange = NSMakeRange(openMarkupRange.location, closeMarkupRange.location - openMarkupRange.location - kLinkOpenMarkup.length);
             
-            if (styleRange.location < realText.length && realText.length > styleRange.length && linkUrlArray > 0) {
-                NSString *urlStr = linkUrlArray[i];
+            if (styleRange.location < realText.length && realText.length > styleRange.length) {
                 NSURL *url;
-                if (urlStr && [urlStr length] > 0) {
-                    url = [NSURL URLWithString:urlStr];
+                if (linkUrlArray.count > 0 && linkUrlArray.count > i) {
+                    NSString *urlStr = linkUrlArray[i];
+                    if (urlStr && [urlStr length] > 0) {
+                        url = [NSURL URLWithString:urlStr];
+                    }
                 }
                 [self addLinkToURL:url withRange:styleRange];
             }
