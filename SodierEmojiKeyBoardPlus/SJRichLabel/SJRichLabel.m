@@ -15,6 +15,17 @@
 NSString *const kLinkOpenMarkup  = @"<url>";
 NSString *const kLinkCloseMarkup = @"</url>";
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        /*
+         * emoji origin.y 矫正
+         */
+//        self.emojiOriginYOffsetRatioWithLineHeight = 0.06;
+    }
+    return self;
+}
+
 - (void)setRichText:(NSString *)richText {
     [self richTextConfig];
     
@@ -27,6 +38,7 @@ NSString *const kLinkCloseMarkup = @"</url>";
     [EMStringStylingConfiguration sharedInstance].strongFont = [UIFont boldSystemFontOfSize:self.font.pointSize];
     [EMStringStylingConfiguration sharedInstance].emphasisFont = [SJRichLabel italicFontOfSize:self.font.pointSize];
     [EMStringStylingConfiguration sharedInstance].lineSpacing = self.lineSpacing;
+    [EMStringStylingConfiguration sharedInstance].defaultColor = self.textColor;
     
     // Then for the demo I created a bunch of custom styling class to provide examples
     
