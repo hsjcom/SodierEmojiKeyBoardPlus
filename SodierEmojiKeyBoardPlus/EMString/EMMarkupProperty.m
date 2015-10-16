@@ -22,6 +22,8 @@ NSString * const kEMStrongMarkup         = @"<strong>";
 
 NSString * const kEMEmphasisMarkup       = @"<em>";
 
+NSString * const kEMStrongItalicMarkup   = @"<strongItalic>"; //strong + italic
+
 NSString * const kEMUnderlineMarkup      = @"<u>";
 
 NSString * const kEMStrikethroughMarkup      = @"<s>";

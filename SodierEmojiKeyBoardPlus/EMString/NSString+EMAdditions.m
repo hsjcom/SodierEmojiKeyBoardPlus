@@ -23,11 +23,12 @@
     NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self styleParagraphForString:mutableString]];
     // Default style need to be applied first
     string = [self defaultStyling:string];
-    string = [self styleStrongForString:string];
     string = [self styleEmphasisForString:string];
+    string = [self styleStrongForString:string];
     string = [self styleUnderlineForString:string];
     string = [self styleStrikethroughForString:string];
     string = [self styleHeaders:string];
+    string = [self styleStrongItalicForString:string];
     
     // For overide purpose, we MUST apply custom class styling in last.
     if ([EMStringStylingConfiguration sharedInstance].stylingClasses.count > 0) {
@@ -113,6 +114,27 @@
     stylingClass.attributes = @{NSFontAttributeName : [EMStringStylingConfiguration sharedInstance].emphasisFont, NSForegroundColorAttributeName : [EMStringStylingConfiguration sharedInstance].emphasisColor };
     return [self applyStylingClass:stylingClass forAttributedString:attributedString];
 }
+
+
+/**
+ *  by Soldier
+ *
+ *  @param attributedString The NSAttributedString to use for apply styling
+ *
+ *  @return NSSAttributed string with styling applied
+ */
+- (NSAttributedString *)styleStrongItalicForString:(NSAttributedString *)attributedString {
+    //中文斜体
+    CGAffineTransform matrix = CGAffineTransformMake(1, 0, tanf(15 * (CGFloat)M_PI / 180), 1, 0, 0);
+    UIFontDescriptor *desc = [UIFontDescriptor fontDescriptorWithName:[UIFont boldSystemFontOfSize:[EMStringStylingConfiguration sharedInstance].defaultFont.pointSize].fontName matrix:matrix];
+    UIFont *font = [UIFont fontWithDescriptor:desc size:[EMStringStylingConfiguration sharedInstance].defaultFont.pointSize];
+    
+    EMStylingClass *stylingClass = [[EMStylingClass alloc] init];
+    stylingClass.markup = kEMStrongItalicMarkup;
+    stylingClass.attributes = @{NSFontAttributeName : font, NSForegroundColorAttributeName : [EMStringStylingConfiguration sharedInstance].defaultColor};
+    return [self applyStylingClass:stylingClass forAttributedString:attributedString];
+}
+
 
 
 /**
