@@ -35,4 +35,11 @@
            constrainedToWidth:(CGFloat)width
                   lineSpacing:(CGFloat)lineSpacing;
 
+/**
+ * 链接带有中文需要encode
+ */
++ (NSString *)urlEncode:(NSString *)str;
+
++ (NSString *)urlDecode:(NSString *)str;
+
 @end

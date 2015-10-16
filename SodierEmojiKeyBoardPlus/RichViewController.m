@@ -48,6 +48,8 @@
 
 - (void)setRichText {
     NSString *url = @"http://www.hsjer.com/";
+    url = [SJRichLabel urlEncode:url]; //链接带中文需要encode
+    
     NSMutableArray *urls = [NSMutableArray arrayWithObjects:url, url, nil];
     [_richLabel addLinkText:self.text linkUrlArray:urls];
 }
@@ -56,6 +58,10 @@
 
 - (void)attributedLabel:(TTTAttributedLabel *)label
    didSelectLinkWithURL:(NSURL *)url {
+    
+    //decode
+    NSString *urlStr = [NSString stringWithFormat:@"%@", url];
+    urlStr = [SJRichLabel urlDecode:urlStr];
     
    [[UIApplication sharedApplication] openURL:url];
 }

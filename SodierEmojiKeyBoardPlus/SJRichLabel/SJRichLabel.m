@@ -233,6 +233,18 @@ NSString *const kLinkCloseMarkup = @"</url>";
     return contentLabel.frame.size.height;
 }
 
+/**
+ * 链接带有中文需要encode
+ */
+
++ (NSString *)urlEncode:(NSString *)str {
+    return [[str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
+}
+
++ (NSString *)urlDecode:(NSString *)str {
+    return [str stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+}
+
 
 
 
