@@ -27,11 +27,24 @@ NSString *const kLinkCloseMarkup = @"</url>";
 }
 
 - (void)setRichText:(NSString *)richText {
-    NSString *realText = [self handelTextCorrelation:richText];
+    NSString *realText = [self handelHtmlString:richText];
+    realText = [self handelTextCorrelation:realText];
     
     [self richTextConfig];
     
     self.text = realText.attributedString;
+}
+
+- (NSString *)handelHtmlString:(NSString *)text {
+    NSString *realText = text;
+    //换行
+    realText = [realText stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
+    realText = [realText stringByReplacingOccurrencesOfString:@"<br/>" withString:@"\n"];
+    
+    //空格
+    realText = [realText stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@"   "];
+    
+    return realText;
 }
 
 - (NSString *)handelTextCorrelation:(NSString *)text {
