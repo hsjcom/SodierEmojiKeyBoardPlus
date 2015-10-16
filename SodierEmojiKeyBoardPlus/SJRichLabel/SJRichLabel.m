@@ -215,9 +215,9 @@ NSString *const kLinkCloseMarkup = @"</url>";
     [contentLabel addLinkText:text linkUrlArray:nil];
     
     [contentLabel sizeToFit];
-    contentLabel.frame = CGRectMake(0, 0, width, contentLabel.height);
+    contentLabel.frame = CGRectMake(0, 0, width, contentLabel.frame.size.height);
     
-    return contentLabel.height;
+    return contentLabel.frame.size.height;
 }
 
 
