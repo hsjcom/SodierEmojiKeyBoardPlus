@@ -198,6 +198,28 @@ NSString *const kLinkCloseMarkup = @"</url>";
     }
 }
 
+/**
+ * 文本高度计算
+ */
++ (CGFloat)richHeightWithText:(NSString *)text
+                         font:(UIFont *)font
+           constrainedToWidth:(CGFloat)width
+                  lineSpacing:(CGFloat)lineSpacing {
+    SJRichLabel *contentLabel = [[SJRichLabel alloc] initWithFrame:CGRectMake(0, 0, width, 30)];
+    contentLabel.disableThreeCommon = YES;
+    contentLabel.lineSpacing = lineSpacing;
+    contentLabel.textAlignment =  NSTextAlignmentLeft;
+    contentLabel.iconFontEnable = YES;
+    contentLabel.numberOfLines = 0;
+    contentLabel.font = font;
+    [contentLabel addLinkText:text linkUrlArray:nil];
+    
+    [contentLabel sizeToFit];
+    contentLabel.frame = CGRectMake(0, 0, width, contentLabel.height);
+    
+    return contentLabel.height;
+}
+
 
 
 

@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SodierEmojiKeyBoardPlus/RichViewController.m"
-            timestampString = "464853553.30391"
+            timestampString = "466170250.404742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SodierEmojiKeyBoardPlus/RichViewController.m"
-            timestampString = "464853568.951475"
+            timestampString = "466170250.404742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -96,6 +96,22 @@
             startingLineNumber = "575"
             endingLineNumber = "575"
             landmarkName = "-addLinksWithTextCheckingResults:attributes:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SodierEmojiKeyBoardPlus/SJRichLabel/SJRichLabel.m"
+            timestampString = "466170978.635262"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "-addLinkText:linkUrlArray:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

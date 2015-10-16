@@ -27,4 +27,12 @@
  */
 - (void)addLinkText:(NSString *)text linkUrlArray:(NSMutableArray *)linkUrlArray;
 
+/**
+ * 文本高度计算
+ */
++ (CGFloat)richHeightWithText:(NSString *)text
+                         font:(UIFont *)font
+           constrainedToWidth:(CGFloat)width
+                  lineSpacing:(CGFloat)lineSpacing;
+
 @end
