@@ -1,5 +1,6 @@
 # SodierEmojiKeyBoardPlus
 支持自定义Emoji表情，Icon Font（FontAwesome）， 斜体，超链接，粗体，下划线，其他字体，颜色，镂空字体等富文本
+ * 继承自 `UILabel`
  * Thanks for `TTTAttributedLabel` & `MLEmojiLabel` & `EMString`
 
 ##EmojiKeyBoard
