@@ -27,16 +27,72 @@ NSString *const kLinkCloseMarkup = @"</url>";
 }
 
 - (void)setRichText:(NSString *)richText {
+    NSString *realText = [self handelTextCorrelation:richText];
+    
     [self richTextConfig];
     
-    self.text = richText.attributedString;
+    self.text = realText.attributedString;
+}
+
+- (NSString *)handelTextCorrelation:(NSString *)text {
+    /*
+     * fix bug:同时设置粗体和斜体问题
+     *
+     */
+    
+    NSString *realText = text;
+    
+    int openMarkupCount = 0, closeMarkupCount = 0;
+    NSRange openMarkupRange, closeMarkupRange;
+    
+    NSString *openMarkup = @"<strong><em>", *closeMarkup = @"</em></strong>";
+    
+    NSMutableString *realTextCopy = [NSMutableString stringWithString:realText];
+    
+    while((openMarkupRange = [realTextCopy rangeOfString:openMarkup]).location != NSNotFound) {
+        openMarkupCount ++;
+        [realTextCopy replaceCharactersInRange:NSMakeRange(openMarkupRange.location, openMarkupRange.length) withString:@""];
+    }
+    
+    while((closeMarkupRange = [realTextCopy rangeOfString:closeMarkup]).location != NSNotFound) {
+        closeMarkupCount ++;
+        [realTextCopy replaceCharactersInRange:NSMakeRange(closeMarkupRange.location, closeMarkupRange.length) withString:@""];
+    }
+    
+    if (openMarkupCount == closeMarkupCount && openMarkupCount > 0  && closeMarkupCount > 0) {
+        realText = [realText stringByReplacingOccurrencesOfString:openMarkup withString:@"<strongItalic>"];
+        realText = [realText stringByReplacingOccurrencesOfString:closeMarkup withString:@"</strongItalic>"];
+    }
+    
+    //
+    realTextCopy = [NSMutableString stringWithString:realText];
+    openMarkupCount = 0, closeMarkupCount = 0;
+    
+    NSString *openMarkup2 = @"<em><strong>", *closeMarkup2 = @"</strong></em>";
+    
+    while((openMarkupRange = [realTextCopy rangeOfString:openMarkup2]).location != NSNotFound) {
+        openMarkupCount ++;
+        [realTextCopy replaceCharactersInRange:NSMakeRange(openMarkupRange.location, openMarkupRange.length) withString:@""];
+    }
+    
+    while((closeMarkupRange = [realTextCopy rangeOfString:closeMarkup2]).location != NSNotFound) {
+        closeMarkupCount ++;
+        [realTextCopy replaceCharactersInRange:NSMakeRange(closeMarkupRange.location, closeMarkupRange.length) withString:@""];
+    }
+    
+    if (openMarkupCount == closeMarkupCount && openMarkupCount > 0  && closeMarkupCount > 0) {
+        realText = [realText stringByReplacingOccurrencesOfString:openMarkup2 withString:@"<strongItalic>"];
+        realText = [realText stringByReplacingOccurrencesOfString:closeMarkup2 withString:@"</strongItalic>"];
+    }
+    
+    return realText;
 }
 
 //富文本
 - (void)richTextConfig {
     [EMStringStylingConfiguration sharedInstance].defaultFont = self.iconFontEnable ? [FontAwesome fontWithSize:self.font.pointSize] : [UIFont systemFontOfSize:self.font.pointSize];
-    [EMStringStylingConfiguration sharedInstance].strongFont = [UIFont boldSystemFontOfSize:self.font.pointSize];
     [EMStringStylingConfiguration sharedInstance].emphasisFont = [SJRichLabel italicFontOfSize:self.font.pointSize];
+    [EMStringStylingConfiguration sharedInstance].strongFont = [UIFont boldSystemFontOfSize:self.font.pointSize];
     [EMStringStylingConfiguration sharedInstance].lineSpacing = self.lineSpacing;
     [EMStringStylingConfiguration sharedInstance].defaultColor = self.textColor;
     
@@ -104,9 +160,12 @@ NSString *const kLinkCloseMarkup = @"</url>";
         
         realText = [realText stringByReplacingOccurrencesOfString:kLinkOpenMarkup withString:@""];
         realText = [realText stringByReplacingOccurrencesOfString:kLinkCloseMarkup withString:@""];
-        
-        self.richText = realText;
     }
+    
+    self.richText = text;
+    styleAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText]; //fix 自定义emoji range计算不准问题
+    
+    self.richText = realText;
     
     for (int i = 0; i < markupCount; i++) {
         if((openMarkupRange = [styleAttributedString.mutableString rangeOfString:kLinkOpenMarkup]).location != NSNotFound) {
@@ -121,7 +180,7 @@ NSString *const kLinkCloseMarkup = @"</url>";
             // Calculate the style range that represent the string between the open and close markups
             NSRange styleRange = NSMakeRange(openMarkupRange.location, closeMarkupRange.location - openMarkupRange.location - kLinkOpenMarkup.length);
             
-            if (styleRange.location < realText.length && realText.length > styleRange.length) {
+            if (styleRange.location < realText.length && realText.length >= styleRange.length) {
                 NSURL *url;
                 if (linkUrlArray.count > 0 && linkUrlArray.count > i) {
                     NSString *urlStr = linkUrlArray[i];
