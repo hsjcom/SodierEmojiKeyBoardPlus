@@ -66,7 +66,7 @@
 
 - (void)constructEmojiView{
     //表情盘
-    _emojiView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, 190)];
+    _emojiView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 190)];
     _emojiView.pagingEnabled = YES;
     _emojiView.contentSize = CGSizeMake((EMOJI_COUNT_ALL / EMOJI_COUNT_PAGE + 1) * self.frame.size.width, 190);
     _emojiView.showsHorizontalScrollIndicator = NO;
@@ -74,7 +74,7 @@
     _emojiView.delegate = self;
     
     //添加PageControl
-    _pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(self.frame.size.width * 0.5 - EMOJI_PAGE_ALL * 20 * 0.5, self.frame.size.height - 15 - 20, EMOJI_PAGE_ALL * 20, 20)];
+    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(self.frame.size.width * 0.5 - EMOJI_PAGE_ALL * 20 * 0.5, self.frame.size.height - 15 - 20, EMOJI_PAGE_ALL * 20, 20)];
     _pageControl.pageIndicatorTintColor = [UIColor colorWithRed:255.0 / 255.0 green:255.0 / 255.0 blue:255.0 / 255.0 alpha:1];
     _pageControl.currentPageIndicatorTintColor = [UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:0.5];
     [_pageControl addTarget:self
@@ -118,7 +118,7 @@
         EmojiButton *emojiButton = [EmojiButton buttonWithType:UIButtonTypeCustom];
         emojiButton.buttonIndex = i - deleteBtnCount;
         [emojiButton addTarget:self
-                        action:@selector(faceButton:)
+                        action:@selector(emojiButton:)
               forControlEvents:UIControlEventTouchUpInside];
         emojiButton.frame = CGRectMake(x, y, EMOJI_ICON_SIZE, EMOJI_ICON_SIZE);
         [emojiButton setImage:[UIImage imageNamed:[NSString stringWithFormat:@"emoji_%03d", i - deleteBtnCount]] forState:UIControlStateNormal];
@@ -128,7 +128,7 @@
 
 #pragma mark - UIScrollViewDelegate
 
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     [_pageControl setCurrentPage:_emojiView.contentOffset.x / self.frame.size.width];
     [_pageControl updateCurrentPageDisplay];
 }
@@ -138,7 +138,7 @@
     [_pageControl setCurrentPage:_pageControl.currentPage];
 }
 
-- (void)faceButton:(id)sender {
+- (void)emojiButton:(id)sender {
     int i = (int)((EmojiButton *)sender).buttonIndex;
     if (self.inputTextField) {
 
@@ -148,7 +148,7 @@
         
     } else if (self.inputTextView) {
         NSMutableString *emojiString = [[NSMutableString alloc]initWithString:self.inputTextView.text];
-        [emojiString appendString:[_emojiMap objectForKey:[NSString stringWithFormat:@"%03d", i]]];
+        [emojiString insertString:[_emojiMap objectForKey:[NSString stringWithFormat:@"%03d", i]] atIndex: self.inputTextView.selectedRange.location];
         self.inputTextView.text = emojiString;
 
         if (delegate && [delegate respondsToSelector:@selector(textViewDidChange:)]) {
