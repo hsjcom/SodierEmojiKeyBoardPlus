@@ -7,6 +7,7 @@
 
  * emoji键盘扩展， 自定义emoji表情
  * emoji字符元 eg：`[微笑]`
+ * 支持`FontAwesome`，`FontAwesome`版本4.4.0
 
 
 ##Rich Text 富文本
